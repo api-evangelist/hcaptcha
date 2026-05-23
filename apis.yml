@@ -1,0 +1,194 @@
+aid: hcaptcha
+name: hCaptcha
+description: |
+  hCaptcha, operated by Intuition Machines, is a privacy-focused CAPTCHA
+  and bot-defense platform used as a drop-in replacement for Google
+  reCAPTCHA. The free Publisher and Pro tiers offer a JavaScript widget
+  and a server-side /siteverify endpoint that issue and verify single-use
+  tokens. The Enterprise tier (hCaptcha Enterprise) adds advanced bot
+  detection, account defense, MFA, machine-learning fraud signals, and
+  management APIs. hCaptcha is broadly integrated into web frameworks and
+  CMS platforms (React, Vue, Angular, Node/Express, WordPress, Magento)
+  and ships first-party mobile SDKs for iOS and Android.
+type: Index
+position: Provider
+access: Public
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - CAPTCHA
+  - Bot Defense
+  - Privacy
+  - hCaptcha
+  - Intuition Machines
+  - Account Defense
+  - Enterprise Security
+url: https://raw.githubusercontent.com/api-evangelist/hcaptcha/refs/heads/main/apis.yml
+created: '2026-05-23'
+modified: '2026-05-23'
+specificationVersion: '0.20'
+apis:
+  - aid: hcaptcha:siteverify
+    name: hCaptcha Siteverify API
+    description: |
+      The /siteverify endpoint validates an hCaptcha response token
+      submitted by a browser. The server POSTs the token, secret key,
+      and optional remote IP, and receives a JSON response indicating
+      success, hostname, timestamp, score (Enterprise), and any error
+      codes. This is the canonical server-side check that gates form
+      submissions and API calls behind an hCaptcha challenge.
+    humanURL: https://docs.hcaptcha.com/
+    baseURL: https://api.hcaptcha.com
+    tags:
+      - Siteverify
+      - Token Verification
+      - Server-Side
+    properties:
+      - type: Documentation
+        url: https://docs.hcaptcha.com/
+      - type: APIReference
+        url: https://docs.hcaptcha.com/#verify-the-user-response-server-side
+  - aid: hcaptcha:js-widget
+    name: hCaptcha JavaScript Widget
+    description: |
+      The hCaptcha JS widget renders the visible or invisible challenge
+      on a page and produces a response token on success. Developers
+      include a script tag pointing at js.hcaptcha.com/1/api.js and place
+      a div with data-sitekey, optionally configuring theme, size,
+      callback, and language. Frontend wrappers exist for React, Vue,
+      and Angular.
+    humanURL: https://docs.hcaptcha.com/configuration
+    baseURL: https://js.hcaptcha.com/1/api.js
+    tags:
+      - JavaScript
+      - Widget
+      - Frontend
+      - Challenge
+    properties:
+      - type: Documentation
+        url: https://docs.hcaptcha.com/configuration
+      - type: ScriptURL
+        url: https://js.hcaptcha.com/1/api.js
+      - type: SDKReact
+        url: https://github.com/hCaptcha/react-hcaptcha
+      - type: SDKVue
+        url: https://github.com/hCaptcha/vue-hcaptcha
+      - type: SDKAngular
+        url: https://github.com/hCaptcha/ng-hcaptcha
+  - aid: hcaptcha:invisible
+    name: hCaptcha Invisible
+    description: |
+      Invisible hCaptcha runs the challenge in the background and only
+      surfaces a visible puzzle when risk requires it. It is configured
+      via the same widget script and an additional data-size="invisible"
+      attribute, enabling no-friction verification on most legitimate
+      users.
+    humanURL: https://docs.hcaptcha.com/invisible
+    baseURL: https://js.hcaptcha.com/1/api.js
+    tags:
+      - Invisible
+      - Frictionless
+      - Risk-Based
+    properties:
+      - type: Documentation
+        url: https://docs.hcaptcha.com/invisible
+  - aid: hcaptcha:mobile-sdks
+    name: hCaptcha Mobile SDKs
+    description: |
+      hCaptcha publishes native iOS and Android SDKs (with React Native
+      and Flutter wrappers) so mobile apps can present the same risk-based
+      challenges as the web widget and obtain response tokens that the
+      server verifies via /siteverify.
+    humanURL: https://docs.hcaptcha.com/mobile_app_sdks
+    baseURL: https://docs.hcaptcha.com/mobile_app_sdks
+    tags:
+      - Mobile
+      - iOS
+      - Android
+      - SDK
+    properties:
+      - type: Documentation
+        url: https://docs.hcaptcha.com/mobile_app_sdks
+      - type: SDKiOS
+        url: https://github.com/hCaptcha/hcaptcha-ios-sdk
+      - type: SDKAndroid
+        url: https://github.com/hCaptcha/hcaptcha-android-sdk
+  - aid: hcaptcha:enterprise
+    name: hCaptcha Enterprise
+    description: |
+      hCaptcha Enterprise extends the core challenge with advanced bot
+      detection, account defense (ATO and fake-account protection), MFA
+      and pull-based SMS, fraud signals, and management APIs for
+      provisioning sitekeys, retrieving analytics, and tuning policies.
+      Access is gated to Enterprise customers.
+    humanURL: https://www.hcaptcha.com/enterprise
+    baseURL: https://api.hcaptcha.com
+    tags:
+      - Enterprise
+      - Account Defense
+      - Fraud
+      - Management API
+    properties:
+      - type: ProductPage
+        url: https://www.hcaptcha.com/enterprise
+      - type: Documentation
+        url: https://docs.hcaptcha.com/enterprise
+features:
+  - name: Drop-In reCAPTCHA Replacement
+    description: Same integration pattern as Google reCAPTCHA, swappable with two lines of code.
+  - name: Privacy-First Design
+    description: Minimizes PII collection and offers GDPR, CCPA, and LGPD-compatible deployments.
+  - name: Invisible and Visible Modes
+    description: Risk-based selection between background verification and visible puzzles.
+  - name: Mobile SDKs
+    description: Native iOS, Android, React Native, and Flutter support.
+  - name: Framework Wrappers
+    description: First-party React, Vue, and Angular components, plus widely used WordPress, Magento, and CMS plugins.
+  - name: Enterprise Account Defense
+    description: ATO, fake-account, and abuse signals layered on top of standard challenge verification.
+useCases:
+  - name: Form Protection
+    description: Gate signup, login, contact, and checkout forms against bot abuse.
+  - name: API Abuse Prevention
+    description: Require an hCaptcha token before accepting calls to public APIs vulnerable to scraping or enumeration.
+  - name: Account Defense
+    description: Reduce account-takeover and fake-account-creation attempts at login and signup.
+  - name: reCAPTCHA Migration
+    description: Replace Google reCAPTCHA with hCaptcha to gain privacy and revenue-share options.
+  - name: Mobile App Verification
+    description: Add challenge gates to sensitive flows in iOS and Android applications.
+integrations:
+  - name: React
+  - name: Vue
+  - name: Angular
+  - name: Node.js / Express
+  - name: WordPress
+  - name: Magento
+  - name: Cloudflare
+  - name: AWS WAF
+authentication:
+  - type: SiteKey
+    description: Public site key embedded in the JS widget identifies the sitekey/property being protected.
+  - type: SecretKey
+    description: Secret key used server-side to verify response tokens at /siteverify.
+common:
+  - type: Website
+    url: https://www.hcaptcha.com/
+  - type: Documentation
+    url: https://docs.hcaptcha.com/
+  - type: Enterprise
+    url: https://www.hcaptcha.com/enterprise
+  - type: Signup
+    url: https://www.hcaptcha.com/signup-interstitial
+  - type: Pricing
+    url: https://www.hcaptcha.com/#pricing
+  - type: GitHubOrganization
+    url: https://github.com/hCaptcha
+  - type: Blog
+    url: https://www.hcaptcha.com/post
+  - type: Privacy
+    url: https://www.hcaptcha.com/privacy
+  - type: Status
+    url: https://status.hcaptcha.com/
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
