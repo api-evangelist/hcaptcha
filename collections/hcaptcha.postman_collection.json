@@ -1,0 +1,196 @@
+{
+  "item": [
+    {
+      "id": "00350230-1abf-4a7a-a0a4-21a38ca4338d",
+      "name": "Verification",
+      "description": {
+        "content": "Server-side verification endpoints.",
+        "type": "text/plain"
+      },
+      "item": [],
+      "event": []
+    },
+    {
+      "id": "aacec713-6968-4c3c-ad35-242017740bab",
+      "name": "Verify user response token",
+      "request": {
+        "name": "Verify user response token",
+        "description": {
+          "content": "Verify the response token returned to the client by the hCaptcha widget.\nThe request must be sent as application/x-www-form-urlencoded. Do not\nuse a GET request for this endpoint.\n",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "siteverify"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "disabled": false,
+              "key": "secret",
+              "value": "<string>",
+              "description": "(Required) Your account's secret key."
+            },
+            {
+              "disabled": false,
+              "key": "response",
+              "value": "<string>",
+              "description": "(Required) The verification token your site received from the client."
+            },
+            {
+              "disabled": false,
+              "key": "remoteip",
+              "value": "<string>",
+              "description": "The user's IP address (recommended)."
+            },
+            {
+              "disabled": false,
+              "key": "sitekey",
+              "value": "<string>",
+              "description": "The expected sitekey for this verification (recommended)."
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "db95d1de-e9f8-483f-b3b7-1820bbffe3e4",
+          "name": "Verification result.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "siteverify"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "secret",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "(Required) Your account's secret key.",
+                    "type": "text/plain"
+                  },
+                  "key": "secret",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "(Required) The verification token your site received from the client.",
+                    "type": "text/plain"
+                  },
+                  "key": "response",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "The user's IP address (recommended).",
+                    "type": "text/plain"
+                  },
+                  "key": "remoteip",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "The expected sitekey for this verification (recommended).",
+                    "type": "text/plain"
+                  },
+                  "key": "sitekey",
+                  "value": "<string>"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"success\": false,\n  \"challenge_ts\": \"string\",\n  \"hostname\": \"string\",\n  \"credit\": false,\n  \"error-codes\": [\n    \"string\",\n    \"string\"\n  ],\n  \"score\": 3803.168488170373,\n  \"score_reason\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.hcaptcha.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "secret"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "2f10fff2-f26e-4d3e-a4aa-f0395c196a1b",
+    "name": "hCaptcha API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "hCaptcha server-side verification API. After a user completes the hCaptcha\nchallenge on the client, the resulting response token must be verified\nserver-side by POSTing it to the /siteverify endpoint along with the\naccount's secret key.\n\n\nContact Support:\n Name: hCaptcha Support",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "hCaptcha API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "secret",
+      "value": "{{secret}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Verify user response token",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.hcaptcha.com/siteverify",
+        "body": {
+          "type": "form-urlencoded",
+          "data": [
+            {
+              "name": "secret",
+              "value": ""
+            },
+            {
+              "name": "response",
+              "value": ""
+            },
+            {
+              "name": "remoteip",
+              "value": ""
+            },
+            {
+              "name": "sitekey",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "docs": "Verify the response token returned to the client by the hCaptcha widget.\nThe request must be sent as application/x-www-form-urlencoded. Do not\nuse a GET request for this endpoint.\n"
+    }
+  ],
+  "bundled": true
+}
