@@ -3,16 +3,17 @@
   "feeds": [
     {
       "source": "https://www.hcaptcha.com/post",
-      "error": "HTTPError"
+      "saved": 0,
+      "error": "HTTP 404; used /blog listing instead"
     },
     {
-      "source": "https://github.com/hCaptcha",
-      "feed_url": "https://github.com/hCaptcha",
-      "title": "",
+      "source": "https://www.hcaptcha.com/blog",
+      "feed_url": "",
       "saved": 0,
-      "method": "none"
+      "method": "agent-scrape"
     }
   ],
-  "post_count": 0,
-  "fetched": "2026-06-14T20:42:17Z"
+  "post_count": 5,
+  "fetched": "2026-06-27T12:45:27Z",
+  "agent_pulled": "2026-06-27"
 }
