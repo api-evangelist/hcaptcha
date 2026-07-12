@@ -1,0 +1,20 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/hcaptcha-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - query
+schemes:
+- name: secretKey
+  type: apiKey
+  in: query
+  parameter: secret
+  description: |-
+    The hCaptcha secret key is passed as a form field named `secret` in the
+    request body (application/x-www-form-urlencoded). It is modeled here as
+    an apiKey scheme for tooling compatibility; the actual transport is the
+    form body, not a query string.
+  sources:
+  - openapi/hcaptcha-openapi.yml

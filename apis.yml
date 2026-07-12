@@ -171,6 +171,10 @@ authentication:
   - type: SecretKey
     description: Secret key used server-side to verify response tokens at /siteverify.
 common:
+  - type: DomainSecurity
+    url: security/hcaptcha-domain-security.yml
+  - type: Authentication
+    url: authentication/hcaptcha-authentication.yml
   - type: Website
     url: https://www.hcaptcha.com/
   - type: Documentation
