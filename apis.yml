@@ -171,6 +171,8 @@ authentication:
   - type: SecretKey
     description: Secret key used server-side to verify response tokens at /siteverify.
 common:
+  - type: AgenticAccess
+    url: agentic-access/hcaptcha-agentic-access.yml
   - type: DomainSecurity
     url: security/hcaptcha-domain-security.yml
   - type: Authentication
