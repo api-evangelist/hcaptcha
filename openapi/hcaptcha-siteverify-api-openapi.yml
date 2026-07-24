@@ -1,26 +1,37 @@
 openapi: 3.1.0
 info:
-  title: hCaptcha API
-  description: |
-    hCaptcha server-side verification API. After a user completes the hCaptcha
+  title: hCaptcha Siteverify API
+  description: 'hCaptcha server-side verification API. After a user completes the hCaptcha
+
     challenge on the client, the resulting response token must be verified
+
     server-side by POSTing it to the /siteverify endpoint along with the
-    account's secret key.
-  version: "1.0.0"
+
+    account''s secret key.
+
+    '
+  version: 1.0.0
   contact:
     name: hCaptcha Support
     url: https://docs.hcaptcha.com/
 servers:
-  - url: https://api.hcaptcha.com
-    description: hCaptcha API production server
+- url: https://api.hcaptcha.com
+  description: hCaptcha API production server
+security:
+- secretKey: []
+tags:
+- name: Siteverify
 paths:
   /siteverify:
     post:
       summary: Verify user response token
-      description: |
-        Verify the response token returned to the client by the hCaptcha widget.
+      description: 'Verify the response token returned to the client by the hCaptcha widget.
+
         The request must be sent as application/x-www-form-urlencoded. Do not
+
         use a GET request for this endpoint.
+
+        '
       operationId: siteverify
       requestBody:
         required: true
@@ -29,8 +40,8 @@ paths:
             schema:
               type: object
               required:
-                - secret
-                - response
+              - secret
+              - response
               properties:
                 secret:
                   type: string
@@ -45,12 +56,14 @@ paths:
                   type: string
                   description: The expected sitekey for this verification (recommended).
       responses:
-        "200":
+        '200':
           description: Verification result.
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/SiteverifyResponse'
+      tags:
+      - Siteverify
 components:
   schemas:
     SiteverifyResponse:
@@ -87,13 +100,12 @@ components:
       type: apiKey
       in: query
       name: secret
-      description: |
-        The hCaptcha secret key is passed as a form field named `secret` in the
+      description: 'The hCaptcha secret key is passed as a form field named `secret` in the
+
         request body (application/x-www-form-urlencoded). It is modeled here as
+
         an apiKey scheme for tooling compatibility; the actual transport is the
+
         form body, not a query string.
-security:
-  - secretKey: []
-tags:
-  - name: Verification
-    description: Server-side verification endpoints.
+
+        '
