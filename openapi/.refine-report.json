@@ -1,0 +1,14 @@
+{
+  "provider": "hcaptcha",
+  "sources": [
+    "hcaptcha-siteverify-api-openapi.yml"
+  ],
+  "outputs": [
+    "hcaptcha-siteverify-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

@@ -1,0 +1,99 @@
+openapi: 3.1.0
+info:
+  title: hCaptcha API
+  description: |
+    hCaptcha server-side verification API. After a user completes the hCaptcha
+    challenge on the client, the resulting response token must be verified
+    server-side by POSTing it to the /siteverify endpoint along with the
+    account's secret key.
+  version: "1.0.0"
+  contact:
+    name: hCaptcha Support
+    url: https://docs.hcaptcha.com/
+servers:
+  - url: https://api.hcaptcha.com
+    description: hCaptcha API production server
+paths:
+  /siteverify:
+    post:
+      summary: Verify user response token
+      description: |
+        Verify the response token returned to the client by the hCaptcha widget.
+        The request must be sent as application/x-www-form-urlencoded. Do not
+        use a GET request for this endpoint.
+      operationId: siteverify
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required:
+                - secret
+                - response
+              properties:
+                secret:
+                  type: string
+                  description: Your account's secret key.
+                response:
+                  type: string
+                  description: The verification token your site received from the client.
+                remoteip:
+                  type: string
+                  description: The user's IP address (recommended).
+                sitekey:
+                  type: string
+                  description: The expected sitekey for this verification (recommended).
+      responses:
+        "200":
+          description: Verification result.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SiteverifyResponse'
+components:
+  schemas:
+    SiteverifyResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: Whether the response token was valid.
+        challenge_ts:
+          type: string
+          description: Timestamp of the challenge load (ISO 8601).
+        hostname:
+          type: string
+          description: The hostname of the site where the challenge was solved.
+        credit:
+          type: boolean
+          description: Optional, deprecated field.
+        error-codes:
+          type: array
+          description: Optional error codes explaining a failed verification.
+          items:
+            type: string
+        score:
+          type: number
+          format: float
+          description: Enterprise only. Risk score for the request (0.0 - 1.0).
+        score_reason:
+          type: array
+          description: Enterprise only. Reason codes contributing to the score.
+          items:
+            type: string
+  securitySchemes:
+    secretKey:
+      type: apiKey
+      in: query
+      name: secret
+      description: |
+        The hCaptcha secret key is passed as a form field named `secret` in the
+        request body (application/x-www-form-urlencoded). It is modeled here as
+        an apiKey scheme for tooling compatibility; the actual transport is the
+        form body, not a query string.
+security:
+  - secretKey: []
+tags:
+  - name: Verification
+    description: Server-side verification endpoints.
