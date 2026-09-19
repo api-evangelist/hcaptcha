@@ -96,6 +96,11 @@ apis:
   baseURL: https://js.hcaptcha.com/1/api.js
   tags:
   - JavaScript
+  - Widgets
+  - Frontend
+  - Challenge
+  tags_raw:
+  - JavaScript
   - Widget
   - Frontend
   - Challenge
