@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: hCaptcha Siteverify API
   description: 'hCaptcha server-side verification API. After a user completes the hCaptcha
@@ -7,9 +7,7 @@ info:
 
     server-side by POSTing it to the /siteverify endpoint along with the
 
-    account''s secret key.
-
-    '
+    account''s secret key.'
   version: 1.0.0
   contact:
     name: hCaptcha Support
@@ -29,9 +27,7 @@ paths:
 
         The request must be sent as application/x-www-form-urlencoded. Do not
 
-        use a GET request for this endpoint.
-
-        '
+        use a GET request for this endpoint.'
       operationId: siteverify
       requestBody:
         required: true
