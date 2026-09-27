@@ -177,6 +177,11 @@ apis:
   tags:
   - Enterprise
   - Account Defense
+  - Fraud Prevention
+  - Management API
+  tags_raw:
+  - Enterprise
+  - Account Defense
   - Fraud
   - Management API
   properties:
