@@ -40,6 +40,9 @@ accessModel:
 position: Producing
 access: Public
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/hcaptcha.png
+x-docs-platform: docusaurus
+x-docs-platform-confidence: medium
+x-docs-platform-checked: 2026-10-03
 tags:
   - CAPTCHA
   - Bot Defense
@@ -238,6 +241,9 @@ authentication:
   - type: SecretKey
     description: Secret key used server-side to verify response tokens at /siteverify.
 common:
+  - type: CapabilityMap
+    url: capabilities/hcaptcha-capability-edges.yml
+    name: hCaptcha Business Capability Map
   - type: AgenticAccess
     url: agentic-access/hcaptcha-agentic-access.yml
   - type: DomainSecurity
