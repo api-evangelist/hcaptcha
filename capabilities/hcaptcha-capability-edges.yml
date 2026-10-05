@@ -1,0 +1,26 @@
+slug: hcaptcha
+provider: hCaptcha
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Siteverify
+  spec_file: hcaptcha-siteverify-api-openapi.yml
+  capability_id: BC-620
+  capability_id_l1: BC-620
+  capability_name: Cybersecurity Management
+  confidence: 0.7
+  evidence: hCaptcha server-side verification API... the resulting response token must be verified server-side
+    by POSTing it to the /siteverify endpoint along with the account's secret key
+  reason: Server-side CAPTCHA token verification is a bot-defense security control, so Cybersecurity Management
+    is the right L1. No single L2 fits cleanly (it is neither IAM nor SOC/SIEM threat response), so the
+    L2 is left null.
