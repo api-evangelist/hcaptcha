@@ -241,6 +241,12 @@ authentication:
   - type: SecretKey
     description: Secret key used server-side to verify response tokens at /siteverify.
 common:
+  - type: Plans
+    url: plans/hcaptcha-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/hcaptcha-rate-limits.yml
+  - type: FinOps
+    url: finops/hcaptcha-finops.yml
   - type: CapabilityMap
     url: capabilities/hcaptcha-capability-edges.yml
     name: hCaptcha Business Capability Map
