@@ -3,6 +3,7 @@ method: searched
 checked:
 - https://azuremarketplace.microsoft.com/
 - okta/integrations/okta-integration-edges.yml
+- wordpress/integrations/wordpress-integration-edges.yml
 marketplace_apps: []
 edges:
 - partner_name: Microsoft Azure Marketplace
@@ -41,5 +42,22 @@ edges:
   - OKTA_VERIFIED
   features:
   - SAML
+- partner_name: WordPress (own)
+  partner: wordpress
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://wordpress.org/plugins/hcaptcha-for-forms-and-more/
+  mirror_of: wordpress/integrations/wordpress-integration-edges.yml
+  apps:
+  - hCaptcha for WP
+  listing_count: 1
+  detected: '2026-10-15'
+  detected_by: mirror-platform-listings.py
+  category: WordPress plugin
 source:
 - okta/integrations/okta-integration-edges.yml
