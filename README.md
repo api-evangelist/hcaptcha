@@ -1,4 +1,4 @@
-# hCaptcha (hcaptcha)
+# hCaptcha
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,181 +64,124 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-hCaptcha, operated by Intuition Machines, is a privacy-focused CAPTCHA
-and bot-defense platform used as a drop-in replacement for Google
-reCAPTCHA. The free Publisher and Pro tiers offer a JavaScript widget
-and a server-side /siteverify endpoint that issue and verify single-use
-tokens. The Enterprise tier (hCaptcha Enterprise) adds advanced bot
-detection, account defense, MFA, machine-learning fraud signals, and
-management APIs. hCaptcha is broadly integrated into web frameworks and
-CMS platforms (React, Vue, Angular, Node/Express, WordPress, Magento)
-and ships first-party mobile SDKs for iOS and Android.
+hCaptcha, operated by Intuition Machines, is a privacy-focused CAPTCHA and bot-defense platform used as a drop-in replacement for Google reCAPTCHA. The free Publisher and Pro tiers offer a JavaScript widget and a server-side /siteverify endpoint that issue and verify single-use tokens. The Enterprise tier (hCaptcha Enterprise) adds advanced bot detection, account defense, MFA, machine-learning fraud signals, and management APIs. hCaptcha is broadly integrated into web frameworks and CMS platforms (React, Vue, Angular, Node/Express, WordPress, Magento) and ships first-party mobile SDKs for iOS and Android.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/hcaptcha/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/hcaptcha/refs/heads/main/apis.yml)
+**Areas:** CAPTCHA · Bot Defense · Privacy · hCaptcha · Intuition Machines · Account Defense · Enterprise Security
 
-## Scope
+## hCaptcha on APIs.io
 
-- **Type:** Index
-- **Position:** Provider
-- **Access:** Public
+Everything profiled for hCaptcha is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/hcaptcha/](https://apis.io/providers/hcaptcha/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (6)
 
-- CAPTCHA
-- Bot Defense
-- Privacy
-- hCaptcha
-- Intuition Machines
-- Account Defense
-- Enterprise Security
+- [hCaptcha Siteverify API](https://apis.io/apis/hcaptcha/siteverify/) — The /siteverify endpoint validates an hCaptcha response token submitted by a browser. The server POSTs the token, secret key, and optional remote IP, and…
+- [hCaptcha JavaScript Widget](https://apis.io/apis/hcaptcha/js-widget/) — The hCaptcha JS widget renders the visible or invisible challenge on a page and produces a response token on success. Developers include a script tag…
+- [hCaptcha Invisible](https://apis.io/apis/hcaptcha/invisible/) — Invisible hCaptcha runs the challenge in the background and only surfaces a visible puzzle when risk requires it. It is configured via the same widget…
+- [hCaptcha Mobile SDKs](https://apis.io/apis/hcaptcha/mobile-sdks/) — hCaptcha publishes native iOS and Android SDKs (with React Native and Flutter wrappers) so mobile apps can present the same risk-based challenges as the web…
+- [hCaptcha Enterprise](https://apis.io/apis/hcaptcha/enterprise/) — hCaptcha Enterprise extends the core challenge with advanced bot detection, account defense (ATO and fake-account protection), MFA and pull-based SMS, fraud…
+- [hCaptcha Siteverify API](https://apis.io/apis/hcaptcha/hcaptcha-siteverify-api/) — The Siteverify API from hCaptcha — 1 operation(s) for siteverify.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-23
-- **Modified:** 2026-05-23
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### hCaptcha Siteverify API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The /siteverify endpoint validates an hCaptcha response token
-submitted by a browser. The server POSTs the token, secret key,
-and optional remote IP, and receives a JSON response indicating
-success, hostname, timestamp, score (Enterprise), and any error
-codes. This is the canonical server-side check that gates form
-submissions and API calls behind an hCaptcha challenge.
+- [Hcaptcha Agentic Access](https://apis.io/agentic-access/hcaptcha/hcaptcha-agentic-access/)
 
-- **Human URL:** [https://docs.hcaptcha.com/](https://docs.hcaptcha.com/)
-- **Base URL:** `https://api.hcaptcha.com`
+#### Collections (2)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Siteverify
-- Token Verification
-- Server-Side
+- [hCaptcha API](https://apis.io/collections/hcaptcha/open-hcaptcha/)
+- [hCaptcha Siteverify API](https://apis.io/collections/hcaptcha/open-hcaptcha-siteverify-api/)
 
-#### Properties
+#### Security (2)
 
-- [Documentation](https://docs.hcaptcha.com/)
-- [API Reference](https://docs.hcaptcha.com/#verify-the-user-response-server-side)
-- [Postman Collection](collections/hcaptcha.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/hcaptcha.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-### hCaptcha JavaScript Widget
+- [Hcaptcha Authentication](https://apis.io/security/hcaptcha/hcaptcha-authentication/)
+- [Hcaptcha Domain Security](https://apis.io/security/hcaptcha/hcaptcha-domain-security/)
 
-The hCaptcha JS widget renders the visible or invisible challenge
-on a page and produces a response token on success. Developers
-include a script tag pointing at js.hcaptcha.com/1/api.js and place
-a div with data-sitekey, optionally configuring theme, size,
-callback, and language. Frontend wrappers exist for React, Vue,
-and Angular.
+#### Plans and pricing (1)
 
-- **Human URL:** [https://docs.hcaptcha.com/configuration](https://docs.hcaptcha.com/configuration)
-- **Base URL:** `https://js.hcaptcha.com/1/api.js`
+Published plans, tiers and prices.
 
-#### Tags
+- [Hcaptcha Plans Pricing](https://apis.io/plans/hcaptcha/hcaptcha-plans-pricing/)
 
-- JavaScript
-- Widget
-- Frontend
-- Challenge
+#### Rate limits (1)
 
-#### Properties
+Published request limits.
 
-- [Documentation](https://docs.hcaptcha.com/configuration)
-- [Script U R L](https://js.hcaptcha.com/1/api.js)
-- [S D K React](https://github.com/hCaptcha/react-hcaptcha)
-- [S D K Vue](https://github.com/hCaptcha/vue-hcaptcha)
-- [S D K Angular](https://github.com/hCaptcha/ng-hcaptcha)
-- [Postman Collection](collections/hcaptcha.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/hcaptcha.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Hcaptcha Rate Limits](https://apis.io/rate-limits/hcaptcha/hcaptcha-rate-limits/)
 
-### hCaptcha Invisible
+#### FinOps (1)
 
-Invisible hCaptcha runs the challenge in the background and only
-surfaces a visible puzzle when risk requires it. It is configured
-via the same widget script and an additional data-size="invisible"
-attribute, enabling no-friction verification on most legitimate
-users.
+What the API costs to run, by operation.
 
-- **Human URL:** [https://docs.hcaptcha.com/invisible](https://docs.hcaptcha.com/invisible)
-- **Base URL:** `https://js.hcaptcha.com/1/api.js`
+- [Hcaptcha Finops](https://apis.io/finops/hcaptcha/hcaptcha-finops/)
 
-#### Tags
+## Where to find this API
 
-- Invisible
-- Frictionless
-- Risk-Based
-
-#### Properties
-
-- [Documentation](https://docs.hcaptcha.com/invisible)
-- [Postman Collection](collections/hcaptcha.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/hcaptcha.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### hCaptcha Mobile SDKs
-
-hCaptcha publishes native iOS and Android SDKs (with React Native
-and Flutter wrappers) so mobile apps can present the same risk-based
-challenges as the web widget and obtain response tokens that the
-server verifies via /siteverify.
-
-- **Human URL:** [https://docs.hcaptcha.com/mobile_app_sdks](https://docs.hcaptcha.com/mobile_app_sdks)
-- **Base URL:** `https://docs.hcaptcha.com/mobile_app_sdks`
-
-#### Tags
-
-- Mobile
-- iOS
-- Android
-- SDK
-
-#### Properties
-
-- [Documentation](https://docs.hcaptcha.com/mobile_app_sdks)
-- [S D Ki O S](https://github.com/hCaptcha/hcaptcha-ios-sdk)
-- [S D K Android](https://github.com/hCaptcha/hcaptcha-android-sdk)
-- [Postman Collection](collections/hcaptcha.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/hcaptcha.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### hCaptcha Enterprise
-
-hCaptcha Enterprise extends the core challenge with advanced bot
-detection, account defense (ATO and fake-account protection), MFA
-and pull-based SMS, fraud signals, and management APIs for
-provisioning sitekeys, retrieving analytics, and tuning policies.
-Access is gated to Enterprise customers.
-
-- **Human URL:** [https://www.hcaptcha.com/enterprise](https://www.hcaptcha.com/enterprise)
-- **Base URL:** `https://api.hcaptcha.com`
-
-#### Tags
-
-- Enterprise
-- Account Defense
-- Fraud
-- Management API
-
-#### Properties
-
-- [Product Page](https://www.hcaptcha.com/enterprise)
-- [Documentation](https://docs.hcaptcha.com/enterprise)
-- [Postman Collection](collections/hcaptcha.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/hcaptcha.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.hcaptcha.com/)
 - [Documentation](https://docs.hcaptcha.com/)
-- [Enterprise](https://www.hcaptcha.com/enterprise)
-- [Signup](https://www.hcaptcha.com/signup-interstitial)
 - [Pricing](https://www.hcaptcha.com/#pricing)
-- [GitHub Organization](https://github.com/hCaptcha)
 - [Blog](https://www.hcaptcha.com/post)
-- [Privacy](https://www.hcaptcha.com/privacy)
-- [Status](https://status.hcaptcha.com/)
+- [GitHub](https://github.com/hCaptcha)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 30.6** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 47.1 |
+| Contract governance | 0.0 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 25.0 |
+| Access clarity | 34.2 |
+
+**Agent readiness 17.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 15.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/hcaptcha/](https://apis.io/providers/hcaptcha/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for hCaptcha: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/hcaptcha/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
